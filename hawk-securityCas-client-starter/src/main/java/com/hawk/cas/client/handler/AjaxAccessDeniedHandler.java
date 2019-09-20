@@ -16,8 +16,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
-import com.hawk.utils.response.api.ReturnData;
-import com.hawk.utils.tool.HttpRequestTool;
+import com.hawk.cas.tool.ReturnData;
 
 @Component
 public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
@@ -25,6 +24,15 @@ public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
 	// =====================================================================================
 
 	protected static final Log logger = LogFactory.getLog(AjaxAccessDeniedHandler.class);
+	
+	 public static boolean isAjax(HttpServletRequest request) {
+	        String requestTypeString = request.getHeader("X-Requested-With");
+	        if (requestTypeString != null && "XMLHttpRequest".equalsIgnoreCase(requestTypeString)) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
 
 	// ~ Instance fields
 	// ================================================================================================
@@ -36,7 +44,7 @@ public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
 
 	public void handle(HttpServletRequest request, HttpServletResponse response,
 			AccessDeniedException accessDeniedException) throws IOException, ServletException {
-		if (HttpRequestTool.isAjax(request)) {
+		if (isAjax(request)) {
 			ReturnData responseData = ReturnData.error("9999", "您目前无权使用该功能,请联系您的管理员为您开通相应权限.");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().write(JSON.toJSONString(responseData));

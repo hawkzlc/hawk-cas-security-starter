@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: hawk-securityCas-client-starter
+Implementation-Version: 1.1.2
+Built-By: zhoulc
+Implementation-Vendor-Id: com.hawk.boot
+Build-Jdk: 1.8.0_212
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/hawk-securityCas-client-starter
+Created-By: Maven Integration for Eclipse
+

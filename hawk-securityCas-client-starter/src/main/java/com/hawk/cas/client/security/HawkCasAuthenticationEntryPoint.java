@@ -18,8 +18,8 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
 
-import com.hawk.utils.tool.HttpRequestTool;
-import com.hawk.utils.tool.PrimaryController;
+import com.hawk.cas.client.handler.AjaxAccessDeniedHandler;
+import com.hawk.cas.tool.PrimaryController;
 
 /**
  * Used by the <code>ExceptionTranslationFilter</code> to commence
@@ -74,7 +74,7 @@ public class HawkCasAuthenticationEntryPoint implements AuthenticationEntryPoint
 
 		final String urlEncodedService = createServiceUrl(servletRequest, response);
 		final String redirectUrl = createRedirectUrl(urlEncodedService);
-		final boolean isAjax = HttpRequestTool.isAjax(servletRequest);
+		final boolean isAjax = AjaxAccessDeniedHandler.isAjax(servletRequest);
 //		Enumeration headerNames = servletRequest.getHeaderNames();
 //		while (headerNames.hasMoreElements()) {
 //	        String key = (String) headerNames.nextElement();

@@ -1,0 +1,42 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "",
+      "type": "com.hawk.cas.client.config.CasProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "app-login-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "app-logout-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "app-server-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "cas-server-login-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "cas-server-logout-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hawk.cas.client.config.CasProperties",
+      "name": "cas-server-url",
+      "type": "java.lang.String"
+    }
+  ]
+}
